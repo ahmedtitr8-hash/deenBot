@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 
 # متغيرات عامة (غير سرية) - عدّلها حسب مشروعك
 [vars]
-FIREBASE_PROJECT_ID = "your-firebase-project-id"
+FIREBASE_PROJECT_ID = "deenbot-a400c"
 DEFAULT_CITY = "Riyadh"
 DEFAULT_COUNTRY = "Saudi Arabia"
 
