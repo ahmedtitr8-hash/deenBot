@@ -1,0 +1,15 @@
+{
+  "name": "deen-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "بوت تليجرام ديني - مواقيت الصلاة، الأذكار، ورد القرآن (شخصي ومشترك)، راديو الحرمين، القرآن الكريم",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
