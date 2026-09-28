@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>نور</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f2622">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="نور">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<main id="gate" class="wrap" hidden>
+  <h1>ثبّت «نور» أولاً</h1>
+  <p class="m">أضف التطبيق إلى الشاشة الرئيسية ثم افتحه من هناك.</p>
+  <div id="android" hidden><button id="ib">تثبيت التطبيق</button></div>
+  <ol id="ios" hidden><li>افتح الموقع في Safari.</li><li>اضغط زر المشاركة.</li><li>اختر «إضافة إلى الشاشة الرئيسية».</li><li>افتح التطبيق من الأيقونة.</li></ol>
+  <p id="after" class="m" hidden>تم التثبيت. افتح «نور» من الشاشة الرئيسية.</p>
+</main>
+<div id="app" hidden>
+  <section id="home" class="tab" hidden></section>
+  <section id="azkar" class="tab" hidden></section>
+  <section id="radio" class="tab" hidden></section>
+  <section id="quran" class="tab" hidden></section>
+  <section id="me" class="tab" hidden></section>
+  <div id="rd" hidden></div>
+  <div id="mini" hidden><div><b id="mt"></b><small id="ms"></small></div><button id="mp">▶</button></div>
+  <nav>
+    <button id="nhome" data-t="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>الرئيسية</button>
+    <button id="nazkar" data-t="azkar"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></svg>الأذكار</button>
+    <button id="nradio" data-t="radio"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8l10-5M8 14h5"/></svg>الراديو</button>
+    <button id="nquran" data-t="quran"><svg viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-2-8-1.5V18c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5C17 4 14 4.5 12 6zM12 6v13.5"/></svg>القرآن</button>
+    <button id="nme" data-t="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>حسابي</button>
+  </nav>
+</div>
+<audio id="au"></audio>
+<script>
+const st=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true||location.search.includes('dev');
+if(st){app.hidden=false;import('./app.js')}else{
+  gate.hidden=false;
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  (ios?document.getElementById('ios'):document.getElementById('android')).hidden=false;
+  let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});
+  ib.onclick=()=>dp?dp.prompt():ib.textContent='من قائمة المتصفح اختر «تثبيت التطبيق»';
+  addEventListener('appinstalled',()=>{android.hidden=true;after.hidden=false});
+}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+</script>
+</body></html>
