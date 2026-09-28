@@ -5,10 +5,10 @@ compatibility_flags = ["nodejs_compat"]
 
 # متغيرات عامة (غير سرية) - عدّلها حسب مشروعك
 [vars]
-FIREBASE_PROJECT_ID = "your-firebase-project-id"
+FIREBASE_PROJECT_ID = "deenbot-a400c"
 DEFAULT_CITY = "Riyadh"
 DEFAULT_COUNTRY = "Saudi Arabia"
-BOT_USERNAME = "your_bot_username"
+BOT_USERNAME = "@deenytbot"
 
 # الأسرار (تُضاف عبر: wrangler secret put <NAME>) وليس هنا:
 # - BOT_TOKEN            (توكن بوت تليجرام)
