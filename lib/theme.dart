@@ -16,7 +16,7 @@ ThemeData buildTheme() {
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: C.panel, indicatorColor: C.gold.withOpacity(.2),
       labelTextStyle: WidgetStatePropertyAll(GoogleFonts.tajawal(fontSize: 12, color: C.sand))),
-    cardTheme: CardTheme(color: C.panel, elevation: 0, margin: const EdgeInsets.symmetric(vertical: 6),
+    cardTheme: CardThemeData(color: C.panel, elevation: 0, margin: const EdgeInsets.symmetric(vertical: 6),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18))),
   );
 }
