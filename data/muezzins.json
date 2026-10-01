@@ -1,0 +1,55 @@
+{
+ "base": "https://archive.org/download/adhans_sunnah/",
+ "list": [
+  {
+   "id": "mishari",
+   "name": "مشاري العفاسي",
+   "file": "adhan_mishari.mp3"
+  },
+  {
+   "id": "makkah",
+   "name": "الحرم المكي",
+   "file": "adhan_makkah.mp3"
+  },
+  {
+   "id": "madina",
+   "name": "الحرم المدني",
+   "file": "adhan_madina_1952.mp3"
+  },
+  {
+   "id": "qatami",
+   "name": "ناصر القطامي",
+   "file": "adhan_nasser_al_qatami.mp3"
+  },
+  {
+   "id": "baset",
+   "name": "عبدالباسط عبدالصمد",
+   "file": "adhan_abdul_baset.mp3"
+  },
+  {
+   "id": "sobhi",
+   "name": "إسلام صبحي",
+   "file": "islam_sobhi.mp3"
+  },
+  {
+   "id": "salman",
+   "name": "سلمان العتيبي",
+   "file": "salman_utaybi.mp3"
+  },
+  {
+   "id": "egypt",
+   "name": "مؤذن مصري",
+   "file": "adhan_egypt.mp3"
+  },
+  {
+   "id": "halab",
+   "name": "أذان حلب",
+   "file": "adhan_halab.mp3"
+  },
+  {
+   "id": "custom",
+   "name": "ملفك الخاص",
+   "file": ""
+  }
+ ]
+}
