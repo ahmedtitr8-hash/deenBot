@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0C1022">
+<meta name="content-base" content="">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="قيام">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>قيام</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Amiri+Quran&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div id="gate"></div>
+<div id="adb"><span id="adt"></span><button id="ads">إيقاف</button></div>
+
+<section id="home" class="on">
+  <div class="top"><div class="rw" style="gap:10px;justify-content:flex-start"><span class="acc" id="hl"></span><div><span class="k" style="font-size:24px">قيام</span><div class="mute sm" id="hj"></div></div></div><button class="chip" id="cityBtn"></button></div>
+  <div class="card" id="locBan" style="display:none"><b>حدّد موقعك لمواقيت دقيقة</b><div class="mute sm">اسمح بتحديد الموقع، أو اختر مدينتك من القائمة</div><div class="rw" style="margin-top:10px;gap:8px"><button class="btn" id="bGps" style="flex:1">تحديد موقعي</button><button class="chip" id="bCity" style="padding:12px 16px">اختيار مدينة</button></div></div>
+  <div class="hero"><div class="arcwrap"><div id="arc"></div><div class="center"><div id="nm">--</div><div id="cd">--:--:--</div><div class="mute sm" id="at"></div></div></div></div>
+  <div class="card" style="margin-top:12px"><div id="verse"></div></div>
+  <div id="times"></div>
+  <div class="card rw" style="margin-top:12px;justify-content:flex-start;gap:14px">
+    <svg width="76" height="76" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="var(--line)" stroke-width="3"/><path d="M50 0l5 9H45z" fill="var(--mute)"/><g id="nd" style="transform-origin:50px 50px;transition:transform .3s"><path d="M50 14L60 52H40z" fill="var(--acc)"/><path d="M50 86L60 52H40z" fill="var(--line)"/></g></svg>
+    <div><div class="k" style="font-size:18px">اتجاه القبلة</div><div class="mute sm" id="qt"></div></div></div>
+</section>
+
+<section id="azkar"><div class="ph"><h1>الأذكار</h1><button class="sb" id="azs"></button></div>
+  <div class="sf" id="azsf"><input type="search" id="azq" placeholder="ابحث في كل الأذكار والأدعية"></div>
+  <div class="tabs2" id="azt"><button class="chip on" data-t="d">الأذكار</button><button class="chip" data-t="o">أدعية متنوعة</button></div>
+  <div id="azgrid"><div class="mute">جارٍ التحميل...</div></div>
+  <div id="azlist" style="display:none"></div>
+</section>
+
+<section id="radio"><div class="ph"><h1>الراديو</h1><button class="sb" id="rs"></button></div>
+  <div class="sf" id="rsf"><input type="search" id="rq" placeholder="ابحث في هذا القسم"></div>
+  <div class="tabs2" id="rt"><button class="chip on" data-t="live">البث</button><button class="chip" data-t="rec">القرّاء</button><button class="chip" data-t="fav">المفضلة</button></div>
+  <div id="rLive"><div id="rlist" class="mute">جارٍ التحميل...</div></div>
+  <div id="rRec" style="display:none"><div id="rcMain"><div id="rcl" class="mute">جارٍ التحميل...</div></div><div id="rdet" style="display:none"></div></div>
+  <div id="rFav" style="display:none"></div>
+</section>
+
+<section id="quran"><div class="ph"><h1>قيام</h1><button class="sb" id="qsb"></button></div>
+  <div class="sf" id="qsf"><input type="search" id="q" placeholder="ابحث باسم السورة أو بنص آية"></div>
+  <div class="tabs2" id="qt"><button class="chip on" data-t="wird">الورد</button><button class="chip" data-t="mush">المصحف</button></div>
+  <div id="qwird"></div>
+  <div id="qmush" style="display:none"><div id="bmk" class="rg"></div><div id="slist" class="mute">جارٍ التحميل...</div></div>
+</section>
+
+<section id="me"><h1>حسابي</h1><div id="hub"></div></section>
+
+<div id="sub" class="ov"><div class="sh"><button id="sback"></button><span id="stitle"></span></div><div id="sbody"></div></div>
+
+<div id="cp" class="ov"><div class="sh"><button id="cpb"></button><span>اختر موقعك</span></div>
+  <div class="row" id="gps"></div>
+  <input type="search" id="cpq" placeholder="ابحث عن مدينة أو محافظة" style="margin-top:6px">
+  <div class="rg" id="cpg"></div><div id="cpl"></div>
+  <div class="lbl">مدينتك غير موجودة؟ ابحث عنها بالإنجليزية (تحتاج إنترنت لمرة واحدة)</div>
+  <input type="text" id="ci" placeholder="المدينة، مثال: Sanaa"><input type="text" id="co" placeholder="الدولة، مثال: Yemen">
+  <button class="btn" id="cpgo">بحث وتأكيد</button></div>
+
+<div id="wz" class="ov"><div class="sh"><button id="wzc"></button><span>إعداد الختمة</span></div><div id="wzb"></div></div>
+
+<div id="np" class="ov"><div class="sh"><button id="npc"></button><span>قيد التشغيل</span><button id="npf" class="hb" style="margin-inline-start:auto"></button></div>
+  <div class="npw"><div class="art" id="npart"></div></div><div class="wv" id="wv"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+  <div class="npt k" id="npt"></div><div class="mute sm" id="nps" style="text-align:center"></div>
+  <div id="npp"><input type="range" id="npr" min="0" max="1000" value="0"><div class="rw sm mute"><span id="npcur">0:00</span><span id="npdur">0:00</span></div></div>
+  <div class="npc"><button id="npb15" class="sm2"></button><button id="npprev"></button><button id="npplay" class="big"></button><button id="npnext"></button><button id="npf15" class="sm2"></button></div>
+  <div class="npx"><button class="chip" id="npsp"></button><button class="chip" id="npsl"></button></div>
+  <div class="npv"><span class="mute">VOL</span><input type="range" id="npv" min="0" max="100" value="100"></div>
+  <button class="btn" id="npkill" style="background:var(--line);color:var(--fg);margin-top:16px"></button></div>
+
+<div id="qr" class="ov"><div class="qh"><button id="qclose" class="qb"></button><button id="qbm" class="qb"></button><span class="mute sm" id="qhint" style="flex:1"></span><input type="text" id="qjn" inputmode="numeric" maxlength="3"></div>
+  <div id="qs"><div id="qpg"><div class="hd"><span id="qh1"></span><span id="qh2"></span></div><div id="qbd"></div><div class="ft" id="qft"></div></div></div>
+  <div class="qf"><button id="qprev" class="qb"></button><div id="qmid"></div><button id="qnext" class="qb"></button></div></div>
+
+<div id="mini"><div class="mi" id="mi"><span class="acc" id="mart"></span><div><b id="mt"></b><small id="ms"></small></div></div><button id="mp"></button><button id="mx"></button></div>
+<audio id="au"></audio>
+<div id="dlg" class="dlg"></div>
+<nav id="nav"></nav>
+
+<script src="js/utils.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/store.js"></script>
+<script src="js/prayer.js"></script>
+<script src="js/qibla.js"></script>
+<script src="js/adhan.js"></script>
+<script src="js/data.js"></script>
+<script src="js/verse.js"></script>
+<script src="js/cities.js"></script>
+<script src="js/azkar.js"></script>
+<script src="js/player.js"></script>
+<script src="js/qiyam.js"></script>
+<script src="js/quran.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/install.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
