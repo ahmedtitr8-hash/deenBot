@@ -1,0 +1,19 @@
+/* ═══ 1. الألوان ═══ */
+:root{--build:5;--bg:#0C1022;--card:#141A33;--fg:#E6E9F7;--mute:#8D96BD;--acc:#9FB4FF;--line:#222B52;--soft:#9FB4FF26;--fs:22px}
+/* ═══ 2. الأساس ═══ */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:400 15px/1.6 'IBM Plex Sans Arabic',Tahoma,system-ui,sans-serif;transition:background .6s,color .6s}
+body{max-width:460px;margin:auto;min-height:100vh;padding-bottom:104px;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-200px;left:50%;width:520px;height:520px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--acc),transparent);opacity:.14;pointer-events:none}
+section{display:none;padding:16px 16px 0;animation:in .35s ease}section.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1,.k{font-family:Cairo,'IBM Plex Sans Arabic',sans-serif;font-weight:700}h1{font-size:26px;margin:2px 0 16px}
+.mute{color:var(--mute)}.acc{color:var(--acc)}.sm{font-size:12.5px}.ic{flex:none;vertical-align:middle}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:15px;margin-bottom:10px;transition:background .6s}
+.chip{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:16px;padding:8px 14px;font:inherit;font-size:13.5px;display:inline-flex;align-items:center;gap:6px}
+.chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc);font-weight:700}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+input[type=text],input[type=search]{width:100%;background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:16px;padding:12px 14px;font:inherit;font-size:15px;margin-bottom:10px;outline:0}
+.btn{background:var(--acc);color:var(--bg);border:0;border-radius:16px;padding:13px;font-family:inherit;font-weight:700;font-size:15px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px}
+.lbl{font-size:13px;color:var(--mute);margin:16px 4px 8px}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px}
