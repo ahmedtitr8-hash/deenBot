@@ -1,0 +1,7 @@
+const V='qiyam-v5',SHELL=['./', 'index.html', 'manifest.webmanifest', 'css/base.css', 'css/components.css', 'css/pages.css', 'js/adhan.js', 'js/app.js', 'js/azkar.js', 'js/cities.js', 'js/data.js', 'js/install.js', 'js/keyboard.js', 'js/nav.js', 'js/player.js', 'js/prayer.js', 'js/qibla.js', 'js/qiyam.js', 'js/quran.js', 'js/settings.js', 'js/store.js', 'js/theme.js', 'js/utils.js', 'js/verse.js', 'data/config.json', 'data/cities.json', 'data/muezzins.json', 'data/radios.json', 'data/azkar-me.json', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/logo.svg'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL.map(u=>new Request(u,{cache:'reload'})))).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',e=>{const r=e.request,u=new URL(r.url);if(r.method!=='GET')return;
+  if(u.origin===location.origin){ /* التطبيق والمحتوى: الشبكة أولًا (دائمًا أحدث نسخة) ثم النسخة المحفوظة بدون إنترنت */
+    e.respondWith(fetch(r,{cache:'no-cache'}).then(x=>{if(x.ok){const k=x.clone();caches.open(V).then(c=>c.put(r,k))}return x}).catch(()=>caches.match(r,{ignoreSearch:true})));return}
+  if(u.host.includes('fonts.g')){e.respondWith(caches.match(r).then(c=>c||fetch(r).then(x=>{const k=x.clone();caches.open(V).then(s=>s.put(r,k));return x})))}});
